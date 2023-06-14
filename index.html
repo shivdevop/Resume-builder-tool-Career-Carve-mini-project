@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume builder</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <div class="resume-builder">
+        <h2 class="header">Select your sections</h2>
+        
+        <div class="section-list">
+          <div class="section" draggable="true">
+           <span class="drag-handle">&#9776;</span>
+
+           <span class="info-button">&#9432;</span>
+
+            <span class="section-name">Profile Summary</span>
+            <!-- <button class="edit-button">✏️</button> -->
+            <!-- <span class="edit-button">&#9998; </span> -->
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <!-- <label class="toggle-switch">
+              <input type="checkbox" checked>
+              <span class="toggle-slider"></span>
+            </label> -->
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+           
+          </div>
+
+          <div class="section" draggable="true">
+            <span class="drag-handle">&#9776;</span>
+
+            <span class="info-button">&#9432;</span>
+            <span class="section-name">Academic and Cocurricular Achievements</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+          <div class="section" draggable="true">
+            <span class="drag-handle">&#9776;</span>
+
+            <span class="info-button">&#9432;</span>
+            <span class="section-name">Summer Internship Experience</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+          <div class="section" draggable="true">
+            <span class="drag-handle">&#9776;</span>
+
+            <span class="info-button">&#9432;</span>
+            <span class="section-name">Work Experience</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="section" draggable="true">
+          <span class="drag-handle">&#9776;</span>
+
+          <span class="info-button">&#9432;</span>
+            <span class="section-name">Projects</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+           
+          </div>
+          <div class="section" draggable="true">
+            <span class="drag-handle">&#9776;</span>
+
+            <span class="info-button">&#9432;</span>
+            <span class="section-name">Certifications</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+
+          <div class="section" draggable="true">
+           <span class="drag-handle">&#9776;</span>
+
+           <span class="info-button">&#9432;</span>
+            <span class="section-name">Leadership Positions</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+
+
+          <div class="section" draggable="true">
+          <span class="drag-handle">&#9776;</span>
+          <span class="info-button">&#9432;</span>
+            <!-- <button class="info-button">ℹ️</button> -->
+            <span class="section-name">Extracurricular</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+          
+          <div class="section" draggable="true">
+           <span class="drag-handle">&#9776;</span>
+            <span class="info-button">&#9432;</span>
+            <!-- <button class="info-button">&#9432;</button> -->
+            <span class="section-name">Education</span>
+            <span class="edit-button" onclick="editSectionName(this)">&#9998;</span>
+            <span class="save-edit-button" onclick="saveSectionName(this)">Save</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            
+          </div>
+           
+        </div>
+        
+        <div class="save-button-container">
+          <button class="save-button" disabled onclick="saveChanges()">Save and Next</button>
+        </div>
+        
+      </div>
+      <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+.header
+{
+    text-align: center;
+}
+.resume-builder {
+    /* Styles for the resume builder container */
+    width: 80%; /* Adjust the width to your preference */
+    margin: 0 auto; /* Set top and bottom margins to 0, and auto for left and right */
+  }
+  
+  .section-list {
+    /* Styles for the section list container */
+  }
+  
+  .section {
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 30px;
+    position: relative;
+    /* Styles for each section element */
+  }
+  .section:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px; /* Adjust the value as needed */
+  }
+  
+  .drag-handle {
+    /* height: 12px;
+width: 18px;
+left: 3px;
+top: 3px;
+border-radius: 0px; */
+    margin-right: 10px;
+
+    cursor: move;
+    /* Styles for the drag handle button */
+  }
+  
+  .section-name {
+    flex-grow: 1;
+    font-family: 'Inter';
+     font-style: normal;
+       font-weight: 500;
+       font-size: 16px;
+       color:#000000;
+  
+    /* Styles for the section name */
+  }
+  
+  .edit-button {
+    /* Styles for the edit button */
+    margin-right: 10px;
+    transform: rotate(-275deg);
+}
+.save-edit-button {
+  display: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+  
+  
+  .toggle-switch {
+    /* Styles for the toggle switch container */
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    /* display: none; */
+  }
+  
+  .toggle-slider {
+    /* Styles for the toggle slider */
+  }
+  
+  .info-button {
+    /* Styles for the info button */
+    margin-right: 10px;
+  }
+  
+
+  .save-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin from the sections */
+  }
+  
+  /* .save-button {
+    background-color: #8A4893;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  } */
+
+  .save-button {
+    /* Your existing styles for the Save button */
+    background-color: #8A4893;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+  }
+  
+  .save-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .save-button:not([disabled]):hover {
+    opacity: 0.8;
+  }
+  
+
+
+  .toggle-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #E6E6E6;
+    border-radius: 50%;
+    transition: transform 0.3s, content 0.3s, color 0.3s;
+  }
+  
+  input:checked + .slider {
+    background-color: #D0BCFF;
+  }
+  /* #8A4893 */
+  input:checked + .slider:before {
+    transform: translateX(20px);
+    content: '✔️';
+    font-size: 12px;
+    background-color: white;
+    color: #381E72;
+  }
+  
+  .slider:before {
+    content: '✖';
+    font-size: 12px;
+    color: #ccc;
+    background-color: #8B8B8B;
+  }
+  
