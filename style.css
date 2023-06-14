@@ -20,6 +20,11 @@
     position: relative;
     /* Styles for each section element */
   }
+
+.section.dragging {
+    transform: scale(1.05);
+  }
+
   .section:after {
     content: "";
     display: block;
