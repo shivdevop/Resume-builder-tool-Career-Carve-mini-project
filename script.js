@@ -1,8 +1,59 @@
 const sections = document.querySelectorAll('.section');
-const saveButton = document.querySelector('.save-button');
-let draggedSection = null;
-let changesMade = false;
+// const saveButton = document.querySelector('.save-button');
+// let draggedSection = null;
+// let changesMade = false;
 
+// sections.forEach(section => {
+//   section.addEventListener('dragstart', () => {
+//     section.classList.add('dragging');
+//     draggedSection = section;
+//   });
+
+//   section.addEventListener('dragover', e => {
+//     e.preventDefault();
+//     const afterElement = getDragAfterElement(section, e.clientY);
+//     const sectionList = section.parentNode;
+//     if (afterElement == null) {
+//       sectionList.appendChild(draggedSection);
+//     } else {
+//       sectionList.insertBefore(draggedSection, afterElement);
+//     }
+//     changesMade = true;
+//   });
+
+//   section.addEventListener('dragend', () => {
+//     section.classList.remove('dragging');
+//     draggedSection = null;
+//     if (changesMade) {
+//       saveButton.disabled = false;
+//     }
+//   });
+
+//   section.addEventListener('input', () => {
+//     changesMade = true;
+//     saveButton.disabled = false;
+//   });
+// });
+
+// function getDragAfterElement(container, y) {
+//   const sectionElements = [...container.parentElement.querySelectorAll('.section:not(.dragging)')];
+
+//   return sectionElements.reduce((closest, section) => {
+//     const box = section.getBoundingClientRect();
+//     const offset = y - box.top - box.height / 2;
+//     if (offset < 0 && offset > closest.offset) {
+//       return { offset, element: section };
+//     } else {
+//       return closest;
+//     }
+//   }, { offset: Number.NEGATIVE_INFINITY }).element;
+// }
+let draggedSection;
+let changesMade = false;
+const saveButton = document.querySelector('.save-button');// Replace 'save-button' with the actual ID of your save button
+
+// Add touch event listeners for drag and drop functionality
+// Add touch event listeners for drag and drop functionality
 sections.forEach(section => {
   section.addEventListener('dragstart', () => {
     section.classList.add('dragging');
@@ -19,6 +70,7 @@ sections.forEach(section => {
       sectionList.insertBefore(draggedSection, afterElement);
     }
     changesMade = true;
+    saveButton.disabled = false;
   });
 
   section.addEventListener('dragend', () => {
@@ -32,6 +84,35 @@ sections.forEach(section => {
   section.addEventListener('input', () => {
     changesMade = true;
     saveButton.disabled = false;
+  });
+
+  // Touch events for mobile/touch devices
+  section.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    section.classList.add('dragging');
+    draggedSection = section;
+  });
+
+  section.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const afterElement = getDragAfterElement(section, touch.clientY);
+    const sectionList = section.parentNode;
+    if (afterElement == null) {
+      sectionList.appendChild(draggedSection);
+    } else {
+      sectionList.insertBefore(draggedSection, afterElement);
+    }
+    changesMade = true;
+    saveButton.disabled = false;
+  });
+
+  section.addEventListener('touchend', () => {
+    section.classList.remove('dragging');
+    draggedSection = null;
+    if (changesMade) {
+      saveButton.disabled = false;
+    }
   });
 });
 
@@ -48,7 +129,6 @@ function getDragAfterElement(container, y) {
     }
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
-
 
 
 ////
